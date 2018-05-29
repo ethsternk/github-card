@@ -31,10 +31,9 @@ class App extends Component {
     const info = active ? (
       <div id="App">
         <button onClick={this.handleClick}>close</button>
-        <p id="name">{this.state.user.name}</p>
-        <p id="username">{this.state.user.login}</p>
-        <p id="page">GitHub: <a href={this.state.user.html_url}>{this.state.user.html_url}</a></p>
         <img src={this.state.user.avatar_url} />
+        <p id="name">{this.state.user.name}</p>
+        <p id="page">{this.state.user.login} | <a href={this.state.user.html_url}>{this.state.user.html_url}</a></p>
       </div>
     ) : (
       <div id="App">

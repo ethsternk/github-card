@@ -15,19 +15,36 @@ class App extends Component {
     })
     .then((json) => {
       this.setState( {user: json} )
-      console.log(json);
+      if (this.state.active) {
+        this.setState( {active: false} )
+      } else {
+        this.setState( {active: true} )
+      }
     });
 
   }
 
   render() {
-    return (
+
+    const active = this.state.active;
+
+    const info = active ? (
       <div id="App">
-        <button onClick={this.handleClick}>click for cookies</button>
+        <button onClick={this.handleClick}>close</button>
         <p id="name">{this.state.user.name}</p>
         <p id="username">{this.state.user.login}</p>
         <p id="page">GitHub: <a href={this.state.user.html_url}>{this.state.user.html_url}</a></p>
         <img src={this.state.user.avatar_url} />
+      </div>
+    ) : (
+      <div id="App">
+        <button onClick={this.handleClick}>open</button>
+      </div>
+    )
+
+    return (
+      <div>
+        {info}
       </div>
     );
   }

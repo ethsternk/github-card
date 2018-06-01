@@ -15,7 +15,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://myusername.github.io/my-app",
+  "homepage": "https://inktivate.github.io/github-card",
   "devDependencies": {
     "gh-pages": "^1.1.0"
   }
